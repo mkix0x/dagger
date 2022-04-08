@@ -2,9 +2,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //TODO: Input buffer, ground detection, edge clamping
+
     private void Awake()
     {
         TryGetComponent(out body);
+    }
+
+    private void FixedUpdate()
+    {
+        if (body.velocity.y <= -1f)
+            IncreaseFallSpeed();
     }
 
     private void Update()
@@ -13,12 +21,32 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
             Jump();
+
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+            ReleaseJump();
+    }
+
+    private void ReleaseJump()
+    {
+        if (body.velocity.y < 1f)
+            return;
+
+        var velocity = body.velocity;
+        velocity.y /= releaseJumpClampIntensity;
+        body.velocity = velocity;
+    }
+
+    private void IncreaseFallSpeed()
+    {
+        var velocity = body.velocity;
+        velocity.y += velocity.y * (1 + fallModifier) * Time.fixedDeltaTime;
+        body.velocity = velocity;
     }
 
     private void Move()
     {
         var horizontal = Input.GetAxisRaw("Horizontal");
-        Vector2 velocity = body.velocity;
+        var velocity = body.velocity;
         velocity.x = horizontal * moveSpeed;
 
         body.velocity = velocity;
@@ -32,7 +60,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        Vector2 velocity = body.velocity;
+        var velocity = body.velocity;
         velocity.y = Mathf.Sqrt(desiredJumpHeight * -2 * Physics2D.gravity.y);
         body.velocity = velocity;
     }
@@ -41,7 +69,12 @@ public class Player : MonoBehaviour
     private float desiredJumpHeight = 2;
 
     [SerializeField]
+    private float fallModifier;
+
+    [SerializeField]
     private float moveSpeed;
 
     private Rigidbody2D body;
+    [SerializeField]
+    private float releaseJumpClampIntensity = 2f;
 }

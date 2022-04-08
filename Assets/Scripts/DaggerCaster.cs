@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using MoreMountains.Feedbacks;
+using UnityEngine;
 
 public class DaggerCaster : MonoBehaviour
 {
@@ -17,8 +18,12 @@ public class DaggerCaster : MonoBehaviour
         Dagger dagger = Instantiate(daggerPrefab, castingPoint.position, castingPoint.rotation);
         dagger.Launch(throwForce);
         cooldown.Reset();
+        castFeedback.PlayFeedbacks();
     }
 
+    [SerializeField]
+    private MMF_Player castFeedback;
+    
     [SerializeField]
     private int attacksPerSecond;
 

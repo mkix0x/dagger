@@ -188,9 +188,9 @@ MonoBehaviour:
   Timescale: 0
   Intensity: 0.02
   MaximumVelocity: 1
-  MinimumScale: {x: 0.75, y: 0.75}
-  MaximumScale: {x: 1.5, y: 1.5}
-  AutoSquashOnStop: 0
+  MinimumScale: {x: 0.9, y: 0.75}
+  MaximumScale: {x: 1.3, y: 1.5}
+  AutoSquashOnStop: 1
   SquashCurve:
     serializedVersion: 2
     m_Curve:
@@ -225,7 +225,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   SquashVelocityThreshold: 0.1
-  SquashDuration: {x: 0.22, y: 0.3}
+  SquashDuration: {x: 0.1, y: 0.1}
   SquashIntensity: {x: 0, y: 1}
   Spring: 0
   SpringDamping: 0.35

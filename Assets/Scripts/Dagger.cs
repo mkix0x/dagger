@@ -6,6 +6,7 @@ public class Dagger : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         enabled = false;
+        GetComponent<Collider2D>().enabled = false;
         Destroy(gameObject, 5f);
     }
 
