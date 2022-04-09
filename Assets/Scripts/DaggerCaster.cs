@@ -15,17 +15,17 @@ public class DaggerCaster : MonoBehaviour
 
     private void Cast()
     {
-        Dagger dagger = Instantiate(daggerPrefab, castingPoint.position, castingPoint.rotation);
+        var dagger = Instantiate(daggerPrefab, castingPoint.position, castingPoint.rotation);
         dagger.Launch(throwForce);
         cooldown.Reset();
         castFeedback.PlayFeedbacks();
     }
 
     [SerializeField]
-    private MMF_Player castFeedback;
-    
-    [SerializeField]
     private int attacksPerSecond;
+
+    [SerializeField]
+    private MMF_Player castFeedback;
 
     [SerializeField]
     private Transform castingPoint;
