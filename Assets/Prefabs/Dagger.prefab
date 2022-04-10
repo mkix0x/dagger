@@ -41,12 +41,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3265180824862149278}
-  - component: {fileID: 3384299008693887066}
   - component: {fileID: 1821505171}
   - component: {fileID: 1821505172}
   - component: {fileID: 1821505173}
   m_Layer: 0
-  m_Name: Dagger Projectile
+  m_Name: Dagger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,20 +68,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3384299008693887066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3265180824862149277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f536ca1a5a8b2d140b21fd32cd25444d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 3
-  hitFeedback: {fileID: 0}
 --- !u!61 &1821505171
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -447,8 +432,8 @@ MonoBehaviour:
         InstantiateParticlesPosition: {fileID: 0}
         TargetWorldPosition: {x: 0, y: 0, z: 0}
         Offset: {x: 0, y: 0, z: 0}
-        NestParticles: 1
-        ApplyRotation: 0
+        NestParticles: 0
+        ApplyRotation: 1
         ApplyScale: 0
 --- !u!1 &8766292923209134057
 GameObject:

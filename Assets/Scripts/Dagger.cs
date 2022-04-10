@@ -6,17 +6,10 @@ public class Dagger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent(out Health health))
-        {
-            health.TakeDamage(3);
-            hitFeedback.PlayFeedbacks();
-            Destroy(gameObject);
-        }
-        else
-        {
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            GetComponent<Collider2D>().enabled = false;
-            Destroy(gameObject, 5f);
-        }
+            health.TakeDamage(damage);
+
+        hitFeedback.PlayFeedbacks();
+        Destroy(gameObject);
     }
 
     public void Launch(float force)
