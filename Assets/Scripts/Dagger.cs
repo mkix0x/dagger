@@ -5,6 +5,9 @@ public class Dagger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!targetLayer.Contains(other.gameObject.layer))
+            return;
+
         if (other.TryGetComponent(out Health health))
             health.TakeDamage(damage);
 
@@ -22,4 +25,7 @@ public class Dagger : MonoBehaviour
 
     [SerializeField]
     private MMF_Player hitFeedback;
+
+    [SerializeField]
+    private LayerMask targetLayer;
 }

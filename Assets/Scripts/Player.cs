@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //TODO: Input buffer, ground detection, edge clamping
+    //TODO: Input buffer, ground detection, dust particles, player teleport on falling bottom, enemy auto-spawner
+    //TODO: Camera rotate due to the "weight" of the player in one of the sides
+    //TODO: Stomp enemy head
+    //TODO: Enraged enemy
 
     private void Awake()
     {

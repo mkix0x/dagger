@@ -129,6 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   hitFeedback: {fileID: 5936878117586137389}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 768
 --- !u!1 &3265180824883528092
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Feedbacks: []
-  InitializationMode: 2
+  InitializationMode: 1
   SafeMode: 3
   Direction: 0
   AutoChangeDirectionOnEnd: 0
@@ -423,11 +426,11 @@ MonoBehaviour:
           TargetBPM: 120
         Owner: {fileID: 5936878117586137389}
         DebugActive: 0
-        Mode: 0
+        Mode: 1
         CachedRecycle: 1
         ParticlesPrefab: {fileID: 1795970561215796148, guid: c23aaf8a01c5b9e458f1116f8d0ac2f9, type: 3}
         RandomParticlePrefabs: []
-        ForceSetActiveOnPlay: 0
+        ForceSetActiveOnPlay: 1
         PositionMode: 0
         InstantiateParticlesPosition: {fileID: 0}
         TargetWorldPosition: {x: 0, y: 0, z: 0}

@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 668003437}
   - component: {fileID: 668003441}
   - component: {fileID: 668003440}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3791,6 +3791,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DaggerSpawnFX
       objectReference: {fileID: 0}
+    - target: {fileID: 421603599214644800, guid: 8d273a78a9b08f945820e52eca012037, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5049200532110357299, guid: 8d273a78a9b08f945820e52eca012037, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3858,6 +3862,7 @@ GameObject:
   - component: {fileID: 974539932}
   - component: {fileID: 974539934}
   - component: {fileID: 974539933}
+  - component: {fileID: 974539935}
   m_Layer: 5
   m_Name: Experience
   m_TagString: Untagged
@@ -3925,6 +3930,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974539931}
   m_CullTransparentMesh: 1
+--- !u!114 &974539935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974539931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9daf713abf874459b3760c8cd89d7513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experience: {fileID: 1389211001}
+  bar: {fileID: 891673421}
 --- !u!1 &1054705626
 GameObject:
   m_ObjectHideFlags: 0
@@ -3935,7 +3954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1054705627}
   - component: {fileID: 1054705628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DaggerCast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4585,7 +4604,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1362904715}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4621,7 +4640,8 @@ GameObject:
   - component: {fileID: 1389210999}
   - component: {fileID: 1389210998}
   - component: {fileID: 1389211000}
-  m_Layer: 0
+  - component: {fileID: 1389211001}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4680,7 +4700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desiredJumpHeight: 4
-  fallModifier: 3
+  fallModifier: 5
   moveSpeed: 8
   releaseJumpClampIntensity: 1.4
 --- !u!70 &1389210999
@@ -4716,6 +4736,18 @@ MonoBehaviour:
   castingPoint: {fileID: 1931985454}
   daggerPrefab: {fileID: 1821505173, guid: 4718e8efd3ce06c438eaf086495309e0, type: 3}
   throwForce: 21
+--- !u!114 &1389211001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389210994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f3c16ba38a464995e6e0ae9b557803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1482170250
 GameObject:
   m_ObjectHideFlags: 0
@@ -4726,7 +4758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1482170252}
   - component: {fileID: 1482170251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4854,7 +4886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1754586970}
   - component: {fileID: 1754586972}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4949,7 +4981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1843347049}
   - component: {fileID: 1843347050}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5033,7 +5065,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1931985454}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5064,7 +5096,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1947851895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Feedbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5097,7 +5129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2129782724}
   - component: {fileID: 2129782725}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dagger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

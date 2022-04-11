@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
 
     private void OnEnable()
     {
+        GetComponent<Health>().Died += OnDied;
         foreach (var sensor in sensors)
         {
             sensor.Triggered += OnSensorTriggered;
@@ -19,6 +20,7 @@ public class Enemy : MonoBehaviour
 
     private void OnDisable()
     {
+        GetComponent<Health>().Died -= OnDied;
         foreach (var sensor in sensors)
         {
             sensor.Triggered -= OnSensorTriggered;
@@ -32,15 +34,19 @@ public class Enemy : MonoBehaviour
         body.velocity = velocity;
 
         Flip();
-        
+
         if (body.position.y > World.BottomHeightLimit)
             return;
 
         var position = transform.position;
         position.y = World.TopHeightLimit;
         transform.position = position;
-        
-        
+    }
+
+    private void OnDied()
+    {
+        var gem = Instantiate(gemPrefab, transform.position, Quaternion.identity);
+        gem.SetExperience(givenExperience);
     }
 
     private void Flip()
@@ -59,20 +65,15 @@ public class Enemy : MonoBehaviour
     }
 
     [SerializeField]
+    private Gem gemPrefab;
+
+    [SerializeField]
+    private int givenExperience;
+
+    [SerializeField]
     private float moveSpeed;
 
     private Rigidbody2D body;
     private int direction;
     private ISensor[] sensors;
-}
-
-internal static class World
-{
-    public const float BottomHeightLimit = -11;
-    public const float TopHeightLimit = 11;
-}
-
-public static class Helper
-{
-    public static T Either<T>(T a, T b) => Random.value < 0.5f ? a : b;
 }
